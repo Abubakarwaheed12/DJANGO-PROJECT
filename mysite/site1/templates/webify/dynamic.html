@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic data in application</title>
+</head>
+<body>
+
+    <h1> helll  {{name|upper}}  </h1>
+    <h1> helll  {{name|truncatechars:4}}  </h1>
+    <h1> helll  {{name|truncatewords:2}}  </h1>
+    <h1> helll  {{name|capfirst}}  </h1>
+    <h1> you age is {{age}} </h1>
+    <h1> you age is {{age|default:"nothing"}} </h1>
+    <h1> your city is {{city}}  </h1>
+    <h1> todat date is {{d}}  </h1>
+
+    {% if name %}
+    <i>{{name}} <br></i>
+    {% endif %}
+    <!-- check the lenght  -->
+    <!-- IF STATEMENTS -->
+    {% if name|length <= 6 %}
+    <i>{{name}} </i>
+    {% else %}
+    <b>NOT FOUND</b>
+    <br>
+    {% endif %}
+
+
+    {% if name == 'abu bakar waheed' %}
+    <i>{{name}}</i>
+    {% endif %}
+
+    <!-- FOR LOOPS IN DTL  -->
+    <ul>
+    {% for std in students reversed %}
+    <li>{{std}}</li>
+   {% endfor %}
+</ul>
+<!-- IN CASE OF EMPTY LIST -->
+<ul>
+    {% for st in student reversed %}
+    <li>{{st}}</li>
+    {%empty%}
+    <p>nothing here</p>
+   {% endfor %}
+</ul>
+</body>
+</html>
