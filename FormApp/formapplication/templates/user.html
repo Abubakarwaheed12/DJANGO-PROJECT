@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+</head>
+<body>
+    <form method=get>
+<!-- DTL DJANGO TEMPLATE LANGUAGE -->
+        <!-- form rendrig -->
+
+        {{form.as_ul}}
+        {{form.name}}
+        {{form.email}}
+        <!-- render the labe; -->
+
+
+        <input action="" type='submit'>
+    </form>
+   <!-- FORM RENDRING  -->
+    {{form.email.label}}<br>
+    {{form.label}}
+    <label for="{{form.name.id_for_label}}"></label>
+    {{form.name}} <br>
+
+    <!-- LOOP IN FORM FIELDS -->
+    <form action="" method="get">
+        {% for field in form.visible_fields %}
+        {{field}}
+        {% endfor %}
+        <input type="submit">
+    </form> <br>
+    
+    <!-- FOR HIDDEN FIELDS -->
+    <form action="" method="get">
+        {% for field in form.hidden_fields %}
+        {{field.label_tag}}
+        {% endfor %}
+        <input type="submit">
+    </form>
+
+
+</body>
+</html>
