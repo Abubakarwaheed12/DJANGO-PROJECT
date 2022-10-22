@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Form </title>
+    <style>
+        .errorlist{
+            color: red;
+            list-style: none;
+            text-transform: capitalize;
+            transform: matrix3d(30);
+        }
+    </style>
+</head>
+<body>
+    <form action="" method="post"  novalidate>
+        {% csrf_token %}
+        
+        <!-- {{reg_form.as_p}} -->
+        
+  {% for field in  reg_form %}
+  <div>
+{{field.label_tag}} {{field}} <br>
+<span>{{field.errors|striptags}}</span>
+</div>
+  {% endfor %}
+
+  <!-- ERROR STYLING IN FORMS IB DJANGO  -->
+  <!-- {% for field in form %}
+   {{form.errors}}
+
+   {% endfor %} -->
+<input type="submit" value="Submit">
+
+
+</form>
+</body>
+</html>

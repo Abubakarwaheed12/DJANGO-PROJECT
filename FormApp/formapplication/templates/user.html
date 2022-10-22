@@ -7,10 +7,12 @@
     <title>USERS</title>
 </head>
 <body>
-    <form method=get>
+    <!-- POST method -->
+    <form method='post'>
+        <!-- CSRF_TOKEN -->
 <!-- DTL DJANGO TEMPLATE LANGUAGE -->
         <!-- form rendrig -->
-
+        {% csrf_token %}
         {{form.as_ul}}
         {{form.name}}
         {{form.email}}
@@ -26,20 +28,20 @@
     {{form.name}} <br>
 
     <!-- LOOP IN FORM FIELDS -->
-    <form action="" method="get">
+    <!-- <form action="" method="get">
         {% for field in form.visible_fields %}
         {{field}}
         {% endfor %}
         <input type="submit">
-    </form> <br>
+    </form> <br> -->
     
     <!-- FOR HIDDEN FIELDS -->
-    <form action="" method="get">
+    <!-- <form action="" method="get">
         {% for field in form.hidden_fields %}
         {{field.label_tag}}
         {% endfor %}
         <input type="submit">
-    </form>
+    </form> -->
 
 
 </body>
