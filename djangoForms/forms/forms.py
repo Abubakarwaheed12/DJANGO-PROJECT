@@ -11,4 +11,5 @@ class userregistration(forms.ModelForm):
         labels={
             'name':'enter name',
             'email':'enter your email',
+            'password':'enter password',
             }
