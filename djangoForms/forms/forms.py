@@ -8,4 +8,7 @@ class userregistration(forms.ModelForm):
         """Meta definition for MODELNAMEform."""
         model = user
         fields = ('name','email' , 'password',)
-        labels={'name':'enter name',}
+        labels={
+            'name':'enter name',
+            'email':'enter your email',
+            }
