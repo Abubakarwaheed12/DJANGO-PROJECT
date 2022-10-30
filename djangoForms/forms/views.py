@@ -1,7 +1,8 @@
 import email
 from unicodedata import name
 from django.shortcuts import render
-from .forms import userregistration
+from .forms import userregistration 
+from .forms import teacherreg
 from .models import user
 # Create your views here.
 
@@ -20,4 +21,5 @@ def userview(request):
             # sv.save()
     else:
         fm=userregistration()
-    return render(request , 'form.html' , {'form':fm})
+        th=teacherreg()
+    return render(request , 'form.html' , {'form':fm , "th":th})
