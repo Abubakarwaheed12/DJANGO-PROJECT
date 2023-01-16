@@ -15,7 +15,9 @@ def get_session(request):
     return render(request, 'cookie/getsession.html' , {'name':name , 'lname':lname , 'keys':keys , 'items':items})
 
 def del_session(request):
+    # shortcut way 
     request.session.flush()
+    # 
     if 'name' in request.session:
         del request.session['name']
     return render(request, 'cookie/delsession.html')
