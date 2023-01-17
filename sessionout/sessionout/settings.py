@@ -6,9 +6,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-z$@q(q8rjwf7=xwph)v@67(_0fvy6^naith^dvox%6h%_7lp+b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -97,13 +97,20 @@ USE_L10N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
 STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# FOR SESSION FILE PATH 
+SESSION_ENGINE='django.contrib.sessions.backends.file'
+SESSION_FILE_PATH= Path(BASE_DIR , 'sessionfile')
+
+
+# for practice purpose 
+# mylist=['a','b','u','b','a','k','a','r']
+
+# newstr=''.join(mylist)
+
+# print(newstr)
