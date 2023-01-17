@@ -9,15 +9,20 @@
 <body>
     <h1>Hello {{name}}  your Session is set .</h1>
     <h2>Your Last name is {{lname}}</h2>    
-    <hr>
+     <h4>{{request.session.get_session_cookie_age}} </h4>
+     <h4>{{request.session.get_expiry_age}} </h4>
+     <h4>{{request.session.get_expiry_date}} </h4>
+     <h4>{{request.session.get_expire_at_browser_close}} </h4>
+
+     <hr>
     <!--all the keys and items of the session-->
 
-     {% for key in keys %}
+     {% comment %} {% for key in keys %}
       <b>{{key}}</b>  <br>
      {% endfor %}
 <hr>
      {% for item in items %}
         <h4>{{item}}</h4>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 </body>
 </html>

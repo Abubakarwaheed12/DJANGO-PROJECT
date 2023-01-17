@@ -17,6 +17,7 @@ def get_session(request):
 def del_session(request):
     # shortcut way 
     request.session.flush()
+    request.session.clear_expired()
     # 
     if 'name' in request.session:
         del request.session['name']
