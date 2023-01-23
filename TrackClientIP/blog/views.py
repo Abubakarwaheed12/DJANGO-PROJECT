@@ -55,7 +55,9 @@ def dashboard(request):
         user=request.user
         full_name=user.get_full_name()
         gps=user.groups.all()
-        return render(request, 'dashboard.html' , {'posts':posts , 'full_name':full_name , 'groups':gps})
+        # iP
+        ip = request.session.get('ip' , 0)
+        return render(request, 'dashboard.html' , {'posts':posts , 'full_name':full_name , 'groups':gps , 'ip':ip})
     else:
         return render(request, 'login.html')
 

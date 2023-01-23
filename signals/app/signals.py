@@ -51,3 +51,40 @@ def at_beg_savre(sender , instance , **kwargs):
     print('sender  :  ', sender)
     print('Instance : ', instance)
     print(f'kwargs :  {kwargs}')
+    
+    
+@receiver(post_save, sender=User)
+def at_beg_savre(sender , instance , created , **kwargs):
+    if created:
+        print('The post save function in run successsfully')
+        print('sender  :  ', sender)
+        print('Instance : ', instance)
+        print(f'kwargs :  {kwargs}')
+    else:
+        print('record Not Save Successfully')
+    
+
+# pre  delete
+
+@receiver(pre_delete, sender=User)
+def at_beg_savre(sender , instance , created , **kwargs):
+    if created:
+        print('The pre delete function in run successsfully')
+        print('sender  :  ', sender)
+        print('Instance : ', instance)
+        print(f'kwargs :  {kwargs}')
+    else:
+        print('Pre Del Successfully')
+
+
+# post delete 
+
+@receiver(post_delete, sender=User)
+def at_beg_savre(sender , instance , created , **kwargs):
+    if created:
+        print('The post delete function in run successsfully')
+        print('sender  :  ', sender)
+        print('Instance : ', instance)
+        print(f'kwargs :  {kwargs}')
+    else:
+        print('Post Del Successfully')
