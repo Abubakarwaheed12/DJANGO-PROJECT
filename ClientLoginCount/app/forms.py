@@ -14,6 +14,15 @@ class sign_up(UserCreationForm):
     class Meta:
         model=User
         fields=['username' ,'first_name' , 'last_name' , 'email',]
+        
+    def __init__(self, *args, **kwargs):
+        super(sign_up,self).__init__(*args,**kwargs)
+        self.fields['username'].widget.attrs.update({'class':'form-control','placeholder':'Username'})
+        self.fields['first_name'].widget.attrs.update({'class':'form-control','placeholder':'First Name'})
+        self.fields['last_name'].widget.attrs.update({'class':'form-control','placeholder':'Last Name'})
+        self.fields['email'].widget.attrs.update({'class':'form-control','placeholder':'Email'})
+        self.fields['password1'].widget.attrs.update({'class':'form-control','placeholder':'Password'})
+        self.fields['password2'].widget.attrs.update({'class':'form-control','placeholder':'Password Confirmation'})       
     
     
 # edit user profie form 
@@ -32,3 +41,4 @@ class editadminprofileform(UserChangeForm):
     class Meta:
         model=User
         fields='__all__'
+        
