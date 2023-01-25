@@ -4,6 +4,8 @@ from django.contrib.auth import authenticate , login , logout
 from django.contrib import messages
 from .forms import sign_up , editprofileform , editadminprofileform
 from django.contrib.auth.models import User , Group
+from django.core.cache import cache
+from django.contrib.auth.models import User
 # Create your views here.
 
 # signup view funtion 
@@ -60,7 +62,9 @@ def user_profile(request):
             else:
                 users=None
                 fm=editprofileform(instance=request.user)
-        return render(request , 'profile.html' , {"name":request.user , "form":fm , 'users':users})
+        ct=cache.get('count' , version=request.user.pk)
+        context={"name":request.user , "form":fm , 'users':users , 'ct':ct}
+        return render(request , 'profile.html' , context=context)
     else:
         return HttpResponseRedirect('/loginsimply/')
 
