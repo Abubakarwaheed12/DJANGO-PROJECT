@@ -36,10 +36,12 @@ def home(request):
     
     
     # Q object In DataBase 
-    students=Student.objects.filter(Q(roll=1) & Q(name='Abu Bakar Waheed'))
+    # students=Student.objects.filter(Q(roll=1) & Q(name='Abu Bakar Waheed'))
     
+    # Limiting Query Set 
+    students=Student.objects.all()[:4:-1]
     
-    print(students.query)
+    # print(students.query)
     context ={
         'students':students,
     }
