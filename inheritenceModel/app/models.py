@@ -23,3 +23,21 @@ class Teacher(BaseClass):
     teachers=CustomManager()
     # Buit in 
     objects=models.Manager()
+    
+    
+# Many to Many Field
+
+class Publications(models.Model):
+    title=models.CharField(max_length=200)
+    
+    
+    def __str__(self):
+        return self.title
+    
+
+class Article(models.Model):
+    name=models.CharField(max_length=200)
+    publications=models.ManyToManyField(Publications)
+    
+    def __str__(self):
+        return self.name

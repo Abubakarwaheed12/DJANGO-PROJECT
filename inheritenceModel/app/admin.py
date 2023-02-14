@@ -1,9 +1,10 @@
 from django.contrib import admin
-from app.models import Student , Teacher
+from app.models import Student , Teacher , Publications , Article
 # Register your models here.
 # admin.site.register(Student)
 admin.site.register(Teacher)
-
+admin.site.register(Article)
+admin.site.register(Publications)
 @admin.register(Student)
 class StudentAdmin(admin.ModelAdmin):
     list_display=['id' , 'name' , 'rollNo' , 'city']
