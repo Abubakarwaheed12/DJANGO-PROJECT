@@ -13,6 +13,7 @@ class BaseClass(models.Model):
         
 class Student(BaseClass):
     rollNo=models.IntegerField()
+    age=None
     
 class Teacher(BaseClass):
     grade=models.IntegerField()
