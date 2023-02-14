@@ -5,7 +5,5 @@ from app.models import Student , Teacher
 def home(request):
     t=Teacher.teachers.all()
     t=Teacher.objects.all()
-    print(t[1].name)
-
-
+    # print(t[1].name)
     return render(request, 'index.html')

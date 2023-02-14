@@ -24,13 +24,14 @@ class StudentAdmin(admin.ModelAdmin):
 
 # Program 2
 # l=[]
-# str='pynative'
-# for i in str:
-#     a=str.index(i)
+# stri='pynative'
+# for i in stri:
+#     a=stri.index(i)
 #     if a%2==0:
-#         l.append(str[a])
-# for val in l:
-#     print(f'{val}')
+#         l.append(stri[a])
+# new_str=''.join(l)
+# print(new_str)
+
 
 
 
