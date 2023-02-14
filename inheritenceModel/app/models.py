@@ -1,5 +1,5 @@
 from django.db import models
-
+from app.managers import CustomManager
 # Create your models here.
 
 class BaseClass(models.Model):
@@ -17,3 +17,8 @@ class Student(BaseClass):
     
 class Teacher(BaseClass):
     grade=models.IntegerField()
+    
+    #  Our Custom Manager
+    teachers=CustomManager()
+    # Buit in 
+    objects=models.Manager()

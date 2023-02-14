@@ -8,16 +8,21 @@ admin.site.register(Teacher)
 class StudentAdmin(admin.ModelAdmin):
     list_display=['id' , 'name' , 'rollNo' , 'city']
     
-    
-    
-    
+  
+# Program 1 
+# a='abubakarwaheed'
+# # count a in string 
+# def countchar(str):
+#     countch=0
+#     for i in str:
+#         if i=='e':
+#             countch +=1
+#     return countch
+# print(countchar(a))  
     
     
 
-
-
-
-# Program 
+# Program 2
 # l=[]
 # str='pynative'
 # for i in str:
@@ -26,3 +31,14 @@ class StudentAdmin(admin.ModelAdmin):
 #         l.append(str[a])
 # for val in l:
 #     print(f'{val}')
+
+
+
+# Program 3
+# a='10010010000010001'
+# # find consective zeros 
+# def findConsective(str):
+#     l=str.split('1')
+#     a=len(max(l))
+#     print(5)
+# findConsective(a)
