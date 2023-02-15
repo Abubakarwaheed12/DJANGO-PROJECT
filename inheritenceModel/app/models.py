@@ -41,3 +41,6 @@ class Article(models.Model):
     
     def __str__(self):
         return self.name
+    
+    def writtenBy(self):
+        return ','.join([str(p) for p in self.publications.all()])
