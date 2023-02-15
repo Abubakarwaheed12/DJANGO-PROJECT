@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1>Crud App</h1>
+
+    <div class="flex">
+        <div class="row1">
+    <form method="Post">
+            {% csrf_token %}
+            {{form.as_p}}
+        <input type="submit" value="submit">
+    </form>
+</div>
+<div class="row2">
+   
+    <table>
+        <thead>
+        <th>id</th>
+        <th>name</th>
+        <th>email</th>
+        <th>password</th>
+        <th>Action</th>
+    </thead>
+ 
+    <tbody>
+        {% for st in stu %}
+        <tr>
+            <td>{{st.id}}</td>
+            <td>{{st.name}}</td>
+            <td>{{st.email}}</td>
+            <td>{{st.password}}</td>
+            <td>
+                <a href="{% url 'update' st.id %}">Edit</a>
+               <form action="{% url 'delete' st.id %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value="delete">
+               </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+
+    </table>
+
+</div>
+</div>
+</body>
+</html>
