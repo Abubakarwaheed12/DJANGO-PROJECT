@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView  ,RedirectView
 # Create your views here.
 
 # Template View
@@ -14,3 +14,5 @@ class HomeTemplate(TemplateView):
         return context
     
 # Redirect View 
+class RedirectViewMy(RedirectView):
+    pass
