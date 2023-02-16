@@ -7,7 +7,7 @@ from .models import user
 from django.views.generic.base import TemplateView , RedirectView
 from django.views import View
 # Create your views here.
-
+# All Views Changed to Class Base View 
 # Class Base View 
 class Home_View(TemplateView):
     template_name='home.html'
