@@ -11,13 +11,13 @@ from django.views.generic.base import TemplateView
 class Home_View(TemplateView):
     template_name='home.html'
 
-    def get_context_data(self  , *args , **kwargs):
+    def get_context_data(self ,*args , **kwargs):
         context=super().get_context_data(**kwargs)
-        
+         
         fm=stureg
         stud=user.objects.all()
-        return render (request , 'home.html', {'form':fm , 'stu':stud})
-
+        context={'form':fm , 'stu':stud}
+        return context
 
 # Function Base View 
 # def home(request):
