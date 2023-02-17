@@ -1,22 +1,40 @@
-$(document).ready(function(){
-    $('#button').click(function(){
-        nm=$('#name').val()
-        console.log(nm)
-
-        data={
-            'name':nm,
-        }
-
-        $.ajax(){
-            method:post,
-            url:{% url 'home' %},
-            datatupe:data,
-            success:function(response){
-                    
-            }
+<script>
+    $(document).ready(function(){
+        $('#button').click(function(e){
+            e.preventDefault();
+            let nm=$('#name').val();
+            let csrf=$('input[name=csrfmiddlewaretoken]').val();
+            var len=$('#length')
+           
+            //
+            mydata={
+                name:nm,
+                csrfmiddlewaretoken:csrf
+            };
+            $.ajax({
+                url:"{% url 'saved' %}",
+                method:"POST",
+                data:mydata,
+                success:function(data){
+                    console.log(data)
+                    len.text(data.name + ' your name length is  ' + data.length)
+                },
+                error:function(data){
+                    console.log(data)
+                }
+            });
             
-        }
 
-    })
-    
-})
+        });
+        
+    });
+</script>   
+ <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<script>
+    var len=$('#length')
+</script>    
