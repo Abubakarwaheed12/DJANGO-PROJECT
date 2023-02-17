@@ -1,0 +1,22 @@
+$(document).ready(function(){
+    $('#button').click(function(){
+        nm=$('#name').val()
+        console.log(nm)
+
+        data={
+            'name':nm,
+        }
+
+        $.ajax(){
+            method:post,
+            url:{% url 'home' %},
+            datatupe:data,
+            success:function(response){
+                    
+            }
+            
+        }
+
+    })
+    
+})
