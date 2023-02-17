@@ -8,6 +8,8 @@ def myview(request):
 #  Class Base View
 class myView(View):
     
+  
+# Contact form in class based View 
     def get(self, request):
         return HttpResponse('Hi this is Class Base')
 
@@ -39,3 +41,5 @@ class ContactForm(View):
         
         # return HttpResponse('Your form Data recieved Successfully')
         return redirect('View')
+  
+# Contact form in class based View 
