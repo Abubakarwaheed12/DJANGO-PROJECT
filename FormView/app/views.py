@@ -35,3 +35,25 @@ class ContactCreateView(CreateView):
         return form
  
 #  The Same Way For Creatr Update and Delete View
+
+class MyUpdateView(UpdateView):
+    model=ContactForm
+    fields=['name' , 'message']
+    success_url='/thankyou'
+    def get_form(self):
+        form=super().get_form()
+        form.fields['name'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Enter Name..'})
+        form.fields['message'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Message / Qoute'})
+        return form
+
+# Delete View 
+class MydelView(DeleteView):
+    model=ContactForm
+    fields=['name','message']
+    success_url='thankyou'
+    
+    def get_form(self):
+        form=super().get_form()
+        form.fields['name'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Enter Name..'})
+        form.fields['message'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Message / Qoute'})
+        return form

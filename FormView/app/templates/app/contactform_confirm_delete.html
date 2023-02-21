@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .mycl{
+            
+            border: 1px dotted red;
+            color: red;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 22px;
+
+        }
+        .sb{
+            background-color:white;
+            padding: 10px 20px;
+            border: 1px dotted red;
+            font-size: 22px;
+            color: red;
+            outline: none;
+            cursor: pointer;
+        }
+        .sb:hover{
+            background-color: red;
+            border: 1px dotted white;
+            transition: 0.5s all;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<h3>Your Contact Form Will Be Displayed Here </h3>
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {{form.strip_tags}}
+    <input type="submit" value="Delete" class="sb">
+</form>
+</body>
+</html>
