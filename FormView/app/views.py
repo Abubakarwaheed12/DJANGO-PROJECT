@@ -1,8 +1,9 @@
 from django.shortcuts import render
-from django.views.generic.edit import FormView , CreateView
+from django.views.generic.edit import FormView , CreateView, DeleteView , UpdateView
 from django.views.generic import TemplateView
 from app.models import ContactForm
 from app.forms import  Contact 
+from django import forms 
 # Create your views here.
 
 class ContactView(FormView): 
@@ -20,3 +21,17 @@ class ThankYou(TemplateView):
       
 
 # Create View 
+# This Three Line Of codes will work to  create data in tables 
+class ContactCreateView(CreateView):
+    model=ContactForm
+    fields=['name', 'message']
+    label=['']
+    success_url='thankyou'
+    
+    def get_form(self):
+        form=super().get_form()
+        form.fields['name'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Enter Name..'})
+        form.fields['message'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Message / Qoute'})
+        return form
+ 
+#  The Same Way For Creatr Update and Delete View

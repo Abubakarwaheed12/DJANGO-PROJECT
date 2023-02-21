@@ -10,3 +10,9 @@ class Contact(forms.Form):
     
     def __str__(self):
         return f'{self.name} ({self.message}) '
+    
+    
+    def __init__(self, *args, **kwargs):
+      super().__init__(*args, **kwargs)
+      for key, field in self.fields.items():
+          field.label = ""
