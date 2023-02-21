@@ -10,7 +10,7 @@ async function postReq(){
         },
         body:"{'name':'abu bakar waheed' , 'job':'web dev'}",
         }
-    fetch('data.txt' , myinits)
+    fetch('https://reqres.in/api/users' , myinits)
     .then((response)=>{
         if(!response.ok){
             throw Error(response.statusText) 
