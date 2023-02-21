@@ -49,8 +49,7 @@ class MyUpdateView(UpdateView):
 # Delete View 
 class MydelView(DeleteView):
     model=ContactForm
-    fields=['name','message']
-    success_url='thankyou'
+    success_url='/thankyou'
     
     def get_form(self):
         form=super().get_form()
