@@ -3,7 +3,7 @@ document.getElementById('btn').addEventListener('click', postReq)
 async function postReq(){
    
     const myinits={
-        method:'POST',
+    method:'POST',
         headers:{
             'Content-Type':'application/json',
             'Access-Control-Allow-Credentials': 'true'

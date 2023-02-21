@@ -15,4 +15,9 @@ class HomeTemplate(TemplateView):
     
 # Redirect View 
 class RedirectViewMy(RedirectView):
+
+    url='https://www.dextersol.com'
     pass
+
+# All other class base views examples here
+# GenericView 
