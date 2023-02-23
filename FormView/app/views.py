@@ -56,3 +56,6 @@ class MydelView(DeleteView):
         form.fields['name'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Enter Name..'})
         form.fields['message'].widget=forms.TextInput(attrs={'class':'mycl','placeholder': 'Message / Qoute'})
         return form
+    
+# CLASS Based VIEWS mostly complete 
+
