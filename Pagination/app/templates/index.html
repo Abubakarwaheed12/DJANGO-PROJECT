@@ -23,32 +23,18 @@
           <input type="radio" name="input-paginacao" id="paginacao2">
           <input type="radio" name="input-paginacao" id="paginacao3">
           <input type="radio" name="input-paginacao" id="paginacao4">
+          <input type="radio" name="input-paginacao" id="paginacao5">
+          <input type="radio" name="input-paginacao" id="paginacao6">
           <div class="box-vitrines">
             <ul>
+            {% for post in posts %}
               <div class="vitrine1">
                 <h2>Pagina 1</h2>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
+                <li>{{post.id}}</li>
+                <li>{{post.name}}</li>
+                <li>{{post.title}}</li>
               </div>
-              <div class="vitrine2">
-                <h2>Pagina 2</h2>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-              </div>
-              <div class="vitrine3">
-                <h2>Pagina 3</h2>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-              </div>
-              <div class="vitrine4">
-                <h2>Pagina 4</h2>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-                <li>Vitrine</li>
-              </div>
+             {% endfor %}
             </ul>                  
             <div class="btn-paginacao">
               <ul>
@@ -56,6 +42,8 @@
                 <li><label for="paginacao2">2</label></li>
                 <li><label for="paginacao3">3</label></li>
                 <li><label for="paginacao4">4</label></li>
+                <li><label for="paginacao5">5</label></li>
+                <li><label for="paginacao6">6</label></li>
               </ul>
             </div>
           </div>
