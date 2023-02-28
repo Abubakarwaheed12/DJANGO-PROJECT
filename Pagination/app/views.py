@@ -4,11 +4,11 @@ from django.core.paginator import Paginator
 # Create your views here.
 
 def home(request):
-    posts=post.objects.all()
-    paginator=Paginator(posts, 2)
+    posts=post.objects.all().order_by('id')
+    paginator=Paginator(posts, 4)
     page_number=request.GET.get('page')
     page_obj=paginator.get_page(page_number)
     context={
-        'posts':posts,
-    }
+        'posts':page_obj,
+     }
     return render(request , 'index.html' , context)

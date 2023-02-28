@@ -8,47 +8,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagination</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
+  <style>
+    .blogs{
+      display: flex  !important;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+    .blog{
+      max-width: 300px;
+      border-radius: 20px;
+      background-color: aqua;
+      padding: 30px;
+    }
+    h1{
+      text-align: center;
+      color:black;
+    }
+  </style>
+
+  </head>
 <body>
-    <section class="container">
-        <div class="row">
-    
-            <h1>Django Pagination .... </h1>
-    
-    
-        </div>
-    
-        <div class="box-paginacao">
-          <input type="radio" name="input-paginacao" id="paginacao1" checked>
-          <input type="radio" name="input-paginacao" id="paginacao2">
-          <input type="radio" name="input-paginacao" id="paginacao3">
-          <input type="radio" name="input-paginacao" id="paginacao4">
-          <input type="radio" name="input-paginacao" id="paginacao5">
-          <input type="radio" name="input-paginacao" id="paginacao6">
-          <div class="box-vitrines">
-            <ul>
-            {% for post in posts %}
-              <div class="vitrine1">
-                <h2>Pagina 1</h2>
-                <li>{{post.id}}</li>
-                <li>{{post.name}}</li>
-                <li>{{post.title}}</li>
-              </div>
-             {% endfor %}
-            </ul>                  
-            <div class="btn-paginacao">
-              <ul>
-                <li><label for="paginacao1">1</label></li>
-                <li><label for="paginacao2">2</label></li>
-                <li><label for="paginacao3">3</label></li>
-                <li><label for="paginacao4">4</label></li>
-                <li><label for="paginacao5">5</label></li>
-                <li><label for="paginacao6">6</label></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        
-      </section>
+  <h1>Blog</h1>
+  <div class="blogs">
+  {% for post in posts %}
+  <div class="blog">
+     <h2>{{post.name}}</h2>
+     <p>{{post.title}}</p>
+ </div>
+ {% endfor %}
+
+</div>
+    <div class="container">
+        <ul class="pagination">
+          {% if posts.has_previous %}
+          <li><a href="?page={{posts.previous_page_number}}">Previous</a></li>
+          {% endif %}
+          <li><a href="?page=1">1</a></li>
+          <li><a href="?page=2">2</a></li>
+          <li><a href="?page=3">3</a></li>
+          <li><a href="?page=4">4</a></li>
+          <li><a href="?page=5">5</a></li>
+          <li><a href="?page=7">6</a></li>
+          <li><a href="?page=8">7</a></li>
+          <li><a href="?page=9">8</a></li>
+          {% if posts.has_next %}
+          <li><a href="?page={{posts.next_page_number}}">Next</a></li>
+          {% endif %}
+        </ul>
+      </div>
 </body>
 </html>
